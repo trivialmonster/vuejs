@@ -11,3 +11,10 @@ html, body {
   height: 100%;
   color: #666666;
 }
+
+.g-fade-enter-active, .g-fade-leave-active {
+  transition: opacity .5s;
+}
+.g-fade-enter, .g-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

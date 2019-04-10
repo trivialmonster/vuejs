@@ -1,6 +1,10 @@
 <template>
     <div id="Header" class="Header">
         header:{{title}}
+        <div>
+            <slot name="first"/>
+        </div>
+        <slot name="second"/>
     </div>
 </template>
 
@@ -10,8 +14,10 @@
 //        props: {
 //            title: Number
 //        },
-        data(){
+        data() {
             return {}
         },
+        mounted: function () {
+        }
     }
 </script>
