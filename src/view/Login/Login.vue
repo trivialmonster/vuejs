@@ -10,16 +10,26 @@
         <transition appear name="g-fade">
             <p v-if="show">hello</p>
         </transition>
+
+        <div>
+            <Test :level="1">
+                <div>
+                    <span>Hello world!</span>
+                </div>
+            </Test>
+        </div>
     </div>
 </template>
 
 <script>
     import Header from '../../component/common/Header.vue';
+    import Test from '../../component/common/Test.vue';
     import './Login.less';
 
     export default {
         components: {
             Header,
+            Test
         },
         data () {
             return {
