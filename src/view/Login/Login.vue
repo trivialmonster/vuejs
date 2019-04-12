@@ -31,6 +31,7 @@
             Header,
             Test
         },
+        computed: {},
         data () {
             return {
                 show: true
@@ -41,5 +42,22 @@
 //                getMap: '1111'
 //            }
 //        }
+        mounted() {
+            console.log(this.$store.getters.getCount);
+            setTimeout(() => {
+//                this.$store.commit('countAdd', {
+//                    addNum: 10
+//                });
+//                this.$store.commit({
+//                    type: 'countAdd',/
+//                    addNum: 10
+//                });
+                this.$store.dispatch({
+                    type: 'countAddAsync',
+                    addNum: 10
+                });
+                console.log(this.$store.getters.getCount);
+            }, 3000);
+        }
     }
 </script>

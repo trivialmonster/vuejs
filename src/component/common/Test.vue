@@ -12,6 +12,11 @@
                 this.$slots.default // 子元素数组
             )
         },
+//        render: function (h) {
+//            return (
+//                <div>11111</div>
+//            )
+//        },
         props: {
             level: {
                 type: Number,
