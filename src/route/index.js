@@ -1,21 +1,28 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '../view/Login/Login.vue';
+import * as ROUTES from '../constant/routes';
+
+//  路由懒加载
+const Login = () => import('../view/Login/Login.vue');
+const Homepage = () => import('../view/Homepage/Homepage.vue');
 
 Vue.use(Router);
 
 const NotFound = { template: '<p>找不到页面！</p>' };
 const routes = [
     {
-        path: '/',
+        path: ROUTES.BASE_ROUTE_PATH,
         redirect: to => {
-            return '/login';
+            return ROUTES.LOGIN;
         }
     },
     {
-        path: '/login',
+        path: ROUTES.LOGIN,
         component: Login,
-        name: 'login'
+    },
+    {
+        path: ROUTES.HOMEPAGE,
+        component: Homepage,
     },
     {
         path: '*',

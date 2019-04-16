@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
     "@vue/babel-preset-jsx": "^1.0.0-beta.3",
     "autoprefixer": "^8.2.0",

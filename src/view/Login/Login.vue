@@ -18,6 +18,8 @@
                 </div>
             </Test>
         </div>
+
+        <button @click="loginFn">login</button>
     </div>
 </template>
 
@@ -31,19 +33,19 @@
             Header,
             Test
         },
-        computed: {},
         data () {
             return {
                 show: true
             }
         },
+        computed: {},
 //        provide: function () {
 //            return {
 //                getMap: '1111'
 //            }
 //        }
         mounted() {
-            console.log(this.$store.getters.getCount);
+//            console.log(this.$store.getters.getLoginStatus);
             setTimeout(() => {
 //                this.$store.commit('countAdd', {
 //                    addNum: 10
@@ -53,11 +55,16 @@
 //                    addNum: 10
 //                });
                 this.$store.dispatch({
-                    type: 'countAddAsync',
-                    addNum: 10
+                    type: 'LOGIN',
+//                    addNum: 10
                 });
-                console.log(this.$store.getters.getCount);
+//                console.log(this.$store.getters.getLoginStatus);
             }, 3000);
+        },
+        methods: {
+            loginFn: function () {
+                this.$router.push('/homepage');
+            }
         }
     }
 </script>
