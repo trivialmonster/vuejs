@@ -3,6 +3,9 @@ import router from './route';
 import store from './store';
 // import App from './view/App.vue';
 
+require('./style/global.less');
+require('./index.less');
+
 new Vue({
     el: '#root',
     router: router,

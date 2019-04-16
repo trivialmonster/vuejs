@@ -3,8 +3,8 @@ import Router from 'vue-router';
 import * as ROUTES from '../constant/routes';
 
 //  路由懒加载
-const Login = () => import('../view/Login/Login.vue');
-const Homepage = () => import('../view/Homepage/Homepage.vue');
+const Login = () => import('../views/Login/Login.vue');
+const Homepage = () => import('../views/Homepage/Homepage.vue');
 
 Vue.use(Router);
 

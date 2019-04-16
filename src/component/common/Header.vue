@@ -1,16 +1,23 @@
 <template>
     <div id="Header" class="Header">
-        header:{{title}}
-        <div>
-            <slot name="first"/>
-        </div>
-        <slot name="second"/>
+        <span>VueJs</span>
+
+        <span v-if="type !== 'login'">
+            test
+        </span>
+        <!--{{type}}-->
+        <!--<div>-->
+            <!--<slot name="first"/>-->
+        <!--</div>-->
+        <!--<slot name="second"/>-->
     </div>
 </template>
 
 <script>
+    import './Header.less';
+
     export default {
-        props: ['title'],
+        props: ['type'],
 //        props: {
 //            title: Number
 //        },
