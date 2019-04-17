@@ -1,7 +1,10 @@
+import axios from 'axios';
 import { LOGIN } from '../../mutation-types';
 
 const Login = {
+    namespaced: true,
     state: {
+        isLoading: false,
         loginStatus: false
     },
     getters: {
@@ -11,10 +14,17 @@ const Login = {
     },
     actions: {
         [LOGIN]({ commit }, data) {
-            commit({
-                type: LOGIN,
-                // addNum: data.addNum
-            });
+            axios.get('/test')
+                .then(function (response) {
+                    console.log(response);
+                    commit({
+                        type: LOGIN,
+                        // addNum: data.addNum
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
     mutations: {

@@ -35,6 +35,10 @@ module.exports = merge(webpackConfig, {
             //     target: 'https://app.alldobetter.com',
             //     secure: false
             // },
+            '/': {
+                target: 'http://localhost:8000',
+                secure: false
+            },
         },
         stats: { //  控制命令行输出的内容
             timings: true,  // 增加时间信息
