@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOGIN } from '../../mutation-types';
+import apis from '../../../service/apis';
 
 const Login = {
     namespaced: true,
@@ -14,7 +15,7 @@ const Login = {
     },
     actions: {
         [LOGIN]({ commit }, data) {
-            axios.get('/test')
+            axios.get(apis.getUrl('testApi'))
                 .then(function (response) {
                     console.log(response);
                     commit({

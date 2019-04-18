@@ -18,16 +18,17 @@
 
         <button @click="loginFn">login</button>
         <Test :level="1" @testClickFn="testClickFn"/>
-        <div>states:{{loginStatus ? 'true' : 'false'}}</div>
-        <div>getters:{{getLoginStatus ? 'true' : 'false'}}</div>
+        <div>getters:{{getLoginStatus}}</div>
     </div>
 </template>
 
 <script>
-    import { mapState, mapGetters } from 'vuex';
+    import { createNamespacedHelpers } from 'vuex';
     import Header from '../../component/common/Header.vue';
     import Test from '../../component/common/Test.vue';
     import './Login.less';
+
+    const { mapGetters, mapActions } = createNamespacedHelpers('Login/');
 
     export default {
         components: {
@@ -42,45 +43,28 @@
             }
         },
         computed: {
-            ...mapState('Login', {
-                'loginStatus': 'loginStatus'
-            }),
-//            ...mapGetters({
-//                'getLoginStatus': 'Login/getLoginStatus'
-//            }),
-            ...mapGetters('Login', {
-                'getLoginStatus': 'getLoginStatus'
+            ...mapGetters({
+                getLoginStatus: 'getLoginStatus'
             })
         },
-        //        computed: mapState([
-        //            'loginStatus'
-        //        ]),
-        //        computed: {
-        //            loginStatus() {
-        //                return this.$store.getters.getLoginStatus;
-        //            }
-        //        },
-        //        provide: function () {
-        //            return {
-        //                getMap: '1111'
-        //            }
-        //        }
         watch: {},
         mounted() {
-            //            console.log(this.$store);
-            //            console.log(this.getLoginStatus);
+            console.log(this.$store);
         },
         updated() {
-            //            console.log(this.getLoginStatus);
+
         },
         methods: {
+            ...mapActions([
+                'LOGIN'
+            ]),
             loginFn: function () {
-                this.$store.dispatch({
-//                    type: 'LOGIN',
-                    type: 'Login/LOGIN',
-                    //  addNum: 10
-                });
-                //                this.$router.push('/homepage');
+                this.LOGIN()
+                    .then(() => {
+                        console.log(123);
+                        console.log(this.getLoginStatus);
+                    })
+                //  this.$router.push('/homepage');
             },
             testClickFn: function (value) {
                 console.log('parent method done' + value);

@@ -1,10 +1,4 @@
 import axios from 'axios';
-// import apis from '../service/apis';
-// import search2Obj from '../util/search2Obj';
-
-// const searchObj = search2Obj();
-
-// const deviceCode = searchObj.deviceCode || sessionStorage.getItem('deviceCode') || ''; //  设备code
 
 export const request = axios.create({
     timeout: 20000,
